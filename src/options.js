@@ -62,6 +62,23 @@ export default {
   },
 
   providers: {
+    apple: {
+      name: 'apple',
+      url: '/auth/apple',
+      authorizationEndpoint: 'https://appleid.apple.com/auth/authorize',
+      redirectUri: getRedirectUri('/'),
+      requiredUrlParams: ['scope', 'response_mode'],
+      responseMode: 'query',
+      responseType: 'code',
+      // scope: ['name', 'email'],  //needs form_post AppleID response to redirectUri
+      scope: [],
+      scopeDelimiter: ' ',
+      display: 'popup',
+      oauthType: '2.0',
+      popupOptions: { width: 1020, height: 618 },
+      tokenPath: "token",
+    },
+
     facebook: {
       name: 'facebook',
       url: '/auth/facebook',
