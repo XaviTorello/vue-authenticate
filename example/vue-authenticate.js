@@ -594,6 +594,39 @@ var defaultOptions = {
   },
 
   providers: {
+    apple: {
+      name: 'apple',
+      url: '/auth/apple',
+      authorizationEndpoint: 'https://appleid.apple.com/auth/authorize',
+      redirectUri: getRedirectUri('/'),
+      requiredUrlParams: ['scope', 'response_mode'],
+      responseMode: 'query',
+      responseType: 'code',
+      // scope: ['name', 'email'],
+      scope: [],
+      scopeDelimiter: ' ',
+      display: 'popup',
+      oauthType: '2.0',
+      popupOptions: { width: 1020, height: 618 },
+      tokenPath: "token",
+    },
+    // appler: {
+    //   name: 'apple',
+    //   url: '/auth/apple',
+    //   authorizationEndpoint: 'https://appleid.apple.com/auth/authorize',
+    //   // redirectUri: `${process.env.VUE_APP_BASE}/`, //ensure ending /
+    //   // redirectUri: `${process.env.VUE_APP_BASE}/api/v1/users/oauth/social/jwt-pair/apple-id/`, //ensure ending /
+    //   redirectUri: getRedirectUri('/'),
+    //   requiredUrlParams: ['scope', 'response_mode'],
+    //   responseMode: 'form_post',
+    //   responseType: 'code id_token',
+    //   scope: 'name email',
+    //   scopeDelimiter: ' ',
+    //   display: 'popup',
+    //   oauthType: '2.0',
+    //   popupOptions: { width: 1020, height: 618 }
+    // },
+
     facebook: {
       name: 'facebook',
       url: '/auth/facebook',
